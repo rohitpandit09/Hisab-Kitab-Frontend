@@ -1,29 +1,30 @@
 import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
-import {
-  User,
-  Lock,
-  Mail,
-  Bell,
-  LogOut,
-  Trash2,
-  Save,
-} from "lucide-react";
+import {User,Lock,Mail,Bell,LogOut,Trash2,Save} from "lucide-react";
 
 const Setting = () => {
 
   const [profile, setProfile] = useState({
     name: "Rohit Pandit",
-    email: "rohit@gmail.com",
-    phone: "+91 9876543210",
-    occupation: "Student",
+    email: "rpandit0907@gmail.com",
+    phone: "+91 7219272628",
+    occupation: "",
   });
+  const [formData, setFormData] = useState(profile);
 
   const [password, setPassword] = useState({
     current: "",
     newPassword: "",
     confirmPassword: "",
   });
+
+  const handleUpdateProfile = () => {
+
+    setProfile(formData);
+
+    alert("Profile Updated Successfully ✅");
+
+}
 
   return (
 
@@ -80,11 +81,12 @@ const Setting = () => {
                 </label>
 
                 <input
+                  name = "name"
                   type="text"
-                  value={profile.name}
+                  value={formData.name}
                   onChange={(e)=>
-                    setProfile({
-                      ...profile,
+                    setFormData({
+                      ...formData,
                       name:e.target.value
                     })
                   }
@@ -102,11 +104,12 @@ const Setting = () => {
                 </label>
 
                 <input
+                  email= "email"
                   type="email"
-                  value={profile.email}
+                  value={formData.email}
                   onChange={(e)=>
-                    setProfile({
-                      ...profile,
+                    setFormData({
+                      ...formData,
                       email:e.target.value
                     })
                   }
@@ -124,11 +127,12 @@ const Setting = () => {
                 </label>
 
                 <input
+                  phone = "phone"
                   type="text"
-                  value={profile.phone}
+                  value={formData.phone}
                   onChange={(e)=>
-                    setProfile({
-                      ...profile,
+                    setFormData({
+                      ...formData,
                       phone:e.target.value
                     })
                   }
@@ -146,11 +150,12 @@ const Setting = () => {
                 </label>
 
                 <input
+                  occupation="occupation"
                   type="text"
-                  value={profile.occupation}
+                  value={formData.occupation}
                   onChange={(e)=>
-                    setProfile({
-                      ...profile,
+                    setFormData({
+                      ...formData,
                       occupation:e.target.value
                     })
                   }
@@ -163,7 +168,9 @@ const Setting = () => {
 
             <div className="flex justify-end mt-6">
 
-              <button className="bg-[#55C464] hover:bg-[#49B458] text-white px-6 py-3 rounded-xl flex items-center gap-2 active:scale-95">
+              <button className="bg-[#55C464] hover:bg-[#49B458] text-white px-6 py-3 rounded-xl flex items-center gap-2 active:scale-95"
+              onClick={handleUpdateProfile}
+              >
 
                 <Save size={18}/>
 
