@@ -54,7 +54,11 @@ const Login = () => {
           />
         </div>
 
-        <button className="mt-2 h-12 w-full rounded-lg bg-[#55C464] font-semibold text-white transition duration-200 hover:bg-[#49b558] active:scale-95">
+        <button className="mt-2 h-12 w-full rounded-lg bg-[#55C464] font-semibold text-white transition duration-200 hover:bg-[#49b558] active:scale-95"
+        onClick={()=>{
+          navigate('/dashboard');
+        }}
+        >
           Login
         </button>
 

@@ -493,9 +493,7 @@ const Transaction = () => {
 
                     <td>
 
-                      <button className="hover:bg-gray-100 rounded-lg p-2">
-                        <MoreVertical size={18} />
-                      </button>
+                      
 
                     </td>
 
